@@ -1,0 +1,6 @@
+<form #loginForm="ngForm" class="form-inline" (ngSubmit)="login(loginForm.value)" novalidate>
+    <input required name="emailfield" type="email" placeholder=" enter email address" class="form-control" [ngModel]="emailaddress" />
+    <p> {{ emailaddress }} </p>
+    <input required name="passwordfield" type="password" placeholder=" enter password" class="form-control" ngModel/>
+    <button type="submit" [disabled]="!loginForm.valid" class="btn btn-success">Login</button>
+</form>

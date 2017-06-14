@@ -1,0 +1,5 @@
+<nav *ngIf="items">
+    <a href="#" *ngFor="let item of items" (click)="selectItem(item)">{{item}}</a>
+</nav>
+
+{{ this.selectedItem }}

@@ -1,0 +1,13 @@
+<form #userform="ngForm" novalidate (ngSubmit)=validateform(userform.value)>
+    <md-input-container hintLabel="first name">
+        <input mdInput type="text" required #firstname="ngModel" minlength="5" placeholder="enter first name " name="firstname" ngModel/>
+        <div class="errordiv" [hidden]="!(firstname.errors && (firstname.dirty || firstname.touched))">Please enter a value for first name , atleast 5 chars long</div>
+    </md-input-container>
+    <br />
+    <md-input-container hintLabel="Last name">
+        <input mdInput type="text" required #lastname="ngModel" minlength="5" placeholder="enter last name" name="lastname" ngModel/>
+        <div class="errordiv" [hidden]="!(lastname.errors && (lastname.dirty || lastname.touched))">Please enter a value for last name, atleast 5 chars long</div>
+    </md-input-container>
+    <br/>
+    <button [disabled]="!userform.valid" md-button type="submit">Submit</button>
+</form>
