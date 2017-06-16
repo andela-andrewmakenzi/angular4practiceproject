@@ -14,6 +14,11 @@ import { TemplatedrivenformsComponent } from './pages/templatedrivenforms/templa
 import { AuthguardtestComponent } from './pages/authguardtest/authguardtest.component';
 import { AppRoutingModule } from './routes/app.routing';
 import { RouterModule } from '@angular/router';
+import { RestrictedaccessComponent } from './pages/restrictedaccess/restrictedaccess.component';
+
+// services
+import { AuthGuard } from './services/auth-guard-service';
+import { AuthService } from './services/auth-service';
 
 import 'hammerjs';
 
@@ -25,7 +30,8 @@ import 'hammerjs';
     TestFireBaseComponent,
     ReactiveformstestComponent,
     TemplatedrivenformsComponent,
-    AuthguardtestComponent
+    AuthguardtestComponent,
+    RestrictedaccessComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +42,7 @@ import 'hammerjs';
     MaterialModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [],
+  providers: [ AuthService, AuthGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
