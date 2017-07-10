@@ -9,7 +9,7 @@ import { RestrictedaccessComponent } from './../pages/restrictedaccess/restricte
 import { AuthGuard } from './../services/auth-guard-service';
 
 const AppRoutes: Routes = [
-    { path: '', pathMatch: 'full', redirectTo: 'authguardtest', canActivate: [ AuthGuard ]},
+    { path: '', pathMatch: 'full', component: AuthguardtestComponent, canActivate: [ AuthGuard ]},
     { path: 'authguardtest', component: AuthguardtestComponent},
     { path: 'restrictedaccess', component: RestrictedaccessComponent}
 ];
@@ -19,7 +19,3 @@ const AppRoutes: Routes = [
     exports: [ RouterModule ]
 })
 export class AppRoutingModule {}
-
-
-
-

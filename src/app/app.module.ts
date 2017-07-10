@@ -21,6 +21,7 @@ import { AuthGuard } from './services/auth-guard-service';
 import { AuthService } from './services/auth-service';
 
 import 'hammerjs';
+import { PipesComponent } from './pipes/pipes.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import 'hammerjs';
     ReactiveformstestComponent,
     TemplatedrivenformsComponent,
     AuthguardtestComponent,
-    RestrictedaccessComponent
+    RestrictedaccessComponent,
+    PipesComponent
   ],
   imports: [
     BrowserModule,
