@@ -15,13 +15,16 @@ import { AuthguardtestComponent } from './pages/authguardtest/authguardtest.comp
 import { AppRoutingModule } from './routes/app.routing';
 import { RouterModule } from '@angular/router';
 import { RestrictedaccessComponent } from './pages/restrictedaccess/restrictedaccess.component';
+import { PipesComponent } from './pages/pipes/pipes.component';
+import { TestPipe } from './pages/pipes/test.pipe';
+import { DirectivesSubjectsComponent } from './pages/directives-subjects/directives-subjects.component';
+import { HighlightDirective } from './pages/directives-subjects/directives-subjects.directive';
+
+import 'hammerjs';
 
 // services
 import { AuthGuard } from './services/auth-guard-service';
 import { AuthService } from './services/auth-service';
-
-import 'hammerjs';
-import { PipesComponent } from './pipes/pipes.component';
 
 @NgModule({
   declarations: [
@@ -33,14 +36,17 @@ import { PipesComponent } from './pipes/pipes.component';
     TemplatedrivenformsComponent,
     AuthguardtestComponent,
     RestrictedaccessComponent,
-    PipesComponent
+    PipesComponent,
+    TestPipe,
+    DirectivesSubjectsComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    AppRoutingModule,
+    // AppRoutingModule,
     MaterialModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase)
   ],

@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pipes.component.scss']
 })
 export class PipesComponent implements OnInit {
+  number = 2;
 
   constructor() { }
 
