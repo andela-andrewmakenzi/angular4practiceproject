@@ -6,7 +6,7 @@ import { AuthguardtestComponent } from './../pages/authguardtest/authguardtest.c
 import { RestrictedaccessComponent } from './../pages/restrictedaccess/restrictedaccess.component';
 
 // services
-import { AuthGuard } from './../services/auth-guard-service';
+import { AuthGuard } from './../services/auth-guard.service';
 
 const AppRoutes: Routes = [
     { path: '', pathMatch: 'full', component: AuthguardtestComponent, canActivate: [ AuthGuard ]},
