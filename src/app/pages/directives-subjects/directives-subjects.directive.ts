@@ -12,17 +12,14 @@ import 'rxjs/add/operator/switchMap';
 export class HighlightDirective implements OnInit {
 
   @Input() color: string;
-  colorSubject = new Subject<string>(); // produces an observable data stream
+  colorSubject = new Subject<string[]>(); // produces an observable data stream
 
   constructor(private element: ElementRef) {
   }
 
   ngOnInit(): void {
-      this.colorSubject.debounceTime(500).distinctUntilChanged().switchMap((color: string) => color
-        ? color
-        : Observable.of<string>()
-      ).subscribe((color: string) => {
-          console.log(color);
+      this.colorSubject.debounceTime(500).distinctUntilChanged().switchMap()
+      .subscribe(color => {
           this.changeColor(color);
       });
   }
@@ -32,6 +29,6 @@ export class HighlightDirective implements OnInit {
   }
 
   private changeColor(color: string): void {
-    this.element.nativeElement.style.color = color;
+      this.element.nativeElement.style.border = `10px solid ${color}`;
   }
 }
