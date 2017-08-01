@@ -17,14 +17,20 @@ import { RouterModule } from '@angular/router';
 import { RestrictedaccessComponent } from './pages/restrictedaccess/restrictedaccess.component';
 import { PipesComponent } from './pages/pipes/pipes.component';
 import { TestPipe } from './pages/pipes/test.pipe';
+import { BallfollowmouseComponent } from './pages/ballfollowmouse/ballfollowmouse.component';
+
+// directives
 import { DirectivesSubjectsComponent } from './pages/directives-subjects/directives-subjects.component';
 import { HighlightDirective } from './pages/directives-subjects/directives-subjects.directive';
-
-import 'hammerjs';
+import { FollowMouseDirective } from './pages/ballfollowmouse/ballfollowmouse.directive';
 
 // services
 import { AuthGuard } from './services/auth-guard.service';
 import { AuthService } from './services/auth.service';
+
+// finally
+import 'hammerjs';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +45,9 @@ import { AuthService } from './services/auth.service';
     PipesComponent,
     TestPipe,
     DirectivesSubjectsComponent,
-    HighlightDirective
+    HighlightDirective,
+    FollowMouseDirective,
+    BallfollowmouseComponent
   ],
   imports: [
     BrowserModule,
