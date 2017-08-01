@@ -4,7 +4,6 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
-import 'rxjs/add/operator/switchMap';
 
 @Directive({
     selector: '[appHighlight]'
@@ -12,16 +11,14 @@ import 'rxjs/add/operator/switchMap';
 export class HighlightDirective implements OnInit {
 
   @Input() color: string;
-  colorSubject = new Subject<string[]>(); // produces an observable data stream
+  colorSubject = new Subject<string>(); // produces an observable data stream
+  obs = this.colorSubject.asObservable().debounceTime(400).distinctUntilChanged();
 
   constructor(private element: ElementRef) {
   }
 
   ngOnInit(): void {
-      this.colorSubject.debounceTime(500).distinctUntilChanged().switchMap()
-      .subscribe(color => {
-          this.changeColor(color);
-      });
+      this.obs.subscribe(color => this.changeColor(color));
   }
 
   @HostListener('keyup') onKeyUp() {
