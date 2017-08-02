@@ -7,6 +7,5 @@ export class FollowMouseDirective {
     constructor(private element: ElementRef) { }
 
     @HostListener('mousemove') onmousemove(): void {
-        console.log(this.element.nativeElement.value);
     }
 }
